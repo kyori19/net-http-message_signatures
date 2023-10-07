@@ -1,5 +1,18 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+require 'simplecov-html'
+require 'simplecov-cobertura'
+
+SimpleCov.start do
+  enable_coverage :branch
+  primary_coverage :branch
+  formatter SimpleCov::Formatter::MultiFormatter.new([
+                                                       SimpleCov::Formatter::HTMLFormatter,
+                                                       SimpleCov::Formatter::CoberturaFormatter,
+                                                     ])
+end
+
 require 'net/http/message_signatures'
 
 RSpec.configure do |config|
