@@ -76,7 +76,7 @@ GEM
     unicode-display_width (2.5.0)
 
 PLATFORMS
-  arm64-darwin-23
+  ruby
 
 DEPENDENCIES
   net-http-message_signatures!
