@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    net-http-message_signatures (0.1.0)
+    net-http-message_signatures (0.0.1)
       net-http-structured_field_values (~> 0.3.0)
 
 GEM
