@@ -108,5 +108,31 @@ RSpec.describe Net::HTTP::MessageSignatures::Signature do
         end
       end
     end
+
+    context 'when signature is invalid' do
+      describe '#verify!' do
+        it 'raises VerificationError' do
+          signature = described_class.new(
+            signature: sfv::Parser.parse_as_item(<<~SIGN.strip).value,
+              :pmpmTvmbncD3xQm8E9ZV2828BjQWGgiwAaw5bAkgibUopem\
+              LJcWDy/lkbbHAve4cRAtx31Iq786U7it++wgGxbtRxf8Udx7zFZsckzXaJMkA7ChG\
+              52eSkFxykJeNqsrWH5S+oxNFlD4dzVuwe8DhTSja8xxbR/Z2cOGdCbzR72rgFWhzx\
+              2VjBqJzsPLMIQKhO4DGezXehhWwE56YCE+O6c0mKZsfxVrogUvA4HELjVKWmAvtl6\
+              UnCh8jYzuVG5WSb/QEVPnP5TmcAnLH1g+s++v6d4s8m0gCw1fV5/SITLq9mhho8K3\
+              +7EPYTU8IU1bLhdxO5Nyt8C8ssinQ98Xw9Q==:
+            SIGN
+            covered_components: {},
+            params: {
+              'created' => 1618884473,
+              'keyid' => 'test-key-rsa-pss',
+              'nonce' => 'b3k2pp5k7z-50gnwp.yemd',
+            },
+            algorithm:,
+          )
+
+          expect { signature.verify! }.to raise_error Net::HTTP::MessageSignatures::Signature::VerificationError
+        end
+      end
+    end
   end
 end
