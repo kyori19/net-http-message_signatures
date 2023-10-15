@@ -21,6 +21,11 @@ module Net
           @key = key
         end
 
+        def sign(message)
+          ensure_key!
+          key.sign_pss('SHA512', message, salt_length: 64, mgf1_hash: 'SHA512')
+        end
+
         def verify(message, signature)
           ensure_key!
           key.verify_pss('SHA512', signature, message, salt_length: 64, mgf1_hash: 'SHA512')
