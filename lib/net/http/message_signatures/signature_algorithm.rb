@@ -17,7 +17,9 @@ module Net
         # @param [String] message the signature base in binary
         # @return [String] the signature in binary
         def sign(message)
+          # :nocov:
           raise NotImplementedError, 'signature algorithm must implement #sign'
+          # :nocov:
         end
 
         # HTTP_VERIFY method which can be used without verification key material
@@ -26,7 +28,9 @@ module Net
         # @param [String] signature the signature in binary
         # @return [Boolean] whether signature is valid or not
         def verify(message, signature)
+          # :nocov:
           raise NotImplementedError, 'signature algorithm must implement #verify'
+          # :nocov:
         end
 
         class InvalidAlgorithm < StandardError; end
