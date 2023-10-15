@@ -6,5 +6,31 @@ require:
 AllCops:
   NewCops: enable
 
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/SpecFilePathFormat:
+  Enabled: true
+  CustomTransform:
+    RSAPSSSHA512: rsa_pss_sha512
+
+RSpec/SpecFilePathSuffix:
+  Enabled: true
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
 Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
