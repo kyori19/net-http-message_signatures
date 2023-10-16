@@ -2,7 +2,10 @@
 
 require 'net/http'
 
-require_relative 'message_signatures/version'
+require 'net/http/message_signatures/rsa_pss_sha512'
+require 'net/http/message_signatures/signature'
+require 'net/http/message_signatures/signature_algorithm'
+require 'net/http/message_signatures/version'
 
 module Net
   class HTTP
