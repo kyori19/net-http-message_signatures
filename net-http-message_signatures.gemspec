@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'A Ruby implementation of HTTP Message Signatures'
   spec.homepage = 'https://github.com/kyori19/net-http-message_signatures'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 3.2'
+  spec.required_ruby_version = '>= 3.3'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   spec.metadata['rubygems_mfa_required'] = 'true'
