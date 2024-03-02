@@ -130,7 +130,7 @@ RSpec.describe Net::HTTP::MessageSignatures::Signature do
             algorithm:,
           )
 
-          expect { signature.verify! }.to raise_error Net::HTTP::MessageSignatures::Signature::VerificationError
+          expect { signature.verify! }.to raise_error described_class::Signature::VerificationError
         end
       end
     end
